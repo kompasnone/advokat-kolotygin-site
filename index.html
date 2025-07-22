@@ -1,203 +1,138 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Адвокатский кабинет Колотыгин Сергей Евгеньевич</title>
-    <meta name="description" content="Адвокатский кабинет Колотыгина Сергея Евгеньевича. Более 30 лет опыта в уголовном и гражданском праве. Профессиональная защита ваших интересов.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвокат Кологин</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">
-      <img src="images/logo.png" alt="Логотип" width="40" height="40" class="me-2">
-      <span class="fw-bold fs-5">Адвокат Колотыгин С.Е.</span>
-    </a>
-    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">Обо мне</a></li>
-        <li class="nav-item"><a class="nav-link" href="#cases">Кейсы</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn btn-primary btn-consult" href="#consult-form">Бесплатная консультация</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<section id="hero" class="hero-section">
-  <div class="overlay"></div>
-  <div class="container hero-content">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="fw-bold text-center text-md-start mb-4 hero-title">
-          Адвокатский кабинет<br>Колотыгин Сергей Евгеньевич
-        </h1>
-      </div>
-    </div>
-    <div class="row w-100 align-items-stretch flex-grow-1">
-      <div class="col-md-7 text-start d-flex flex-column justify-content-center">
-        <ul class="my-3 list-unstyled hero-description-text">
-          <li>★ Уголовное право</li>
-          <li>★ Гражданский процесс</li>
-          <li>★ Защита ваших интересов</li>
-        </ul>
-        <p class="hero-description-text" style="max-width: 600px;">
-          Более 30 лет успешной практики в уголовном праве и гражданском процессе. Профессиональная защита ваших интересов на всех стадиях дела.
-        </p>
-        <a href="#consult-form" class="btn btn-primary btn-lg mt-3">Получить консультацию</a>
-      </div>
-      </div>
-  </div>
-  <div class="hero-photo-absolute d-none d-md-block">
-    <div class="circular-wrapper">
-      <div class="photo-placeholder-content">
-        <img src="images/photo1.png" alt="Фотография адвоката" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Направления деятельности</h2>
-      <p class="lead text-muted">Квалифицированная юридическая помощь с основной специализацией на защите по уголовным делам.</p>
-    </div>
-    <div class="row text-center g-4">
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow-sm border-0 p-4">
-          <i class="bi bi-shield-lock-fill icon-blue fs-1 mb-3"></i>
-          <h4 class="fw-bold">Уголовное право</h4>
-          <p>Защита на всех стадиях: от доследственной проверки до представительства в суде. Представление интересов потерпевших. Помощь по УДО.</p>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="logo" href="index.html">
+                    <img class="logo-img" src="img/logo.png" alt="">
+                </a>
+                <nav class="nav">
+                    <a class="nav-link" href="#">О нас</a>
+                    <a class="nav-link" href="#">Услуги</a>
+                    <a class="nav-link" href="#">Цены</a>
+                    <a class="nav-link" href="#">Контакты</a>
+                </nav>
+                <a class="phone" href="tel:380961111111">+38 (096) 111 11 11</a>
+                <a class="btn" href="#contact">Получить консультацию</a>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow-sm border-0 p-4">
-          <i class="bi bi-people-fill icon-blue fs-1 mb-3"></i>
-          <h4 class="fw-bold">Гражданское право</h4>
-          <p>Решение семейных, наследственных, жилищных и земельных споров. Защита интересов при сделках с недвижимостью.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow-sm border-0 p-4">
-          <i class="bi bi-building-fill icon-blue fs-1 mb-3"></i>
-          <h4 class="fw-bold">Арбитражные споры</h4>
-          <p>Представительство интересов бизнеса в арбитражных судах. Взыскание задолженностей, корпоративные и договорные споры.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<section id="about" class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-5 text-center">
-        <div class="circular-wrapper about-photo">
-          <div class="photo-placeholder-content">
-            <img src="images/photo2.JPG" alt="Фотография адвоката" class="img-fluid">
-          </div>
+    <section class="about">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-content">
+                    <h1 class="about-title">Колотыгин <br>
+                        Иван Андреевич</h1>
+                    <p class="about-text">адвокат</p>
+                    <a class="about-btn btn" href="#contact">Бесплатная консультация</a>
+                </div>
+                <img class="about-img" src="img/about-img.png" alt="">
+            </div>
         </div>
-      </div>
-      <div class="col-md-7">
-        <h2 class="fw-bold about-heading-color">Обо мне</h2>
-        <p class="lead"><strong>Колотыгин Сергей Евгеньевич</strong> – адвокат с 30-летним стажем практической работы в области уголовного права и гражданского процесса.</p>
-        <p>Главный принцип в работе – <strong>"Проводник по праву"</strong>. Это означает не просто формальное ведение дела, а полное погружение в ситуацию клиента, выстраивание доверительных отношений и поиск оптимального пути для защиты его прав и законных интересов. Индивидуальный подход и нацеленность на результат – основа моей практики.</p>
-        <p class="text-muted">Член Адвокатской палаты Иркутской области.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="cases" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Примеры из практики</h2>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Прекращение уголовного дела</h5>
-            <p class="card-text"><strong>Проблема:</strong> Обвинение в экономическом преступлении.<br><strong>Результат:</strong> На стадии следствия доказана невиновность доверителя, уголовное преследование прекращено.</p>
-          </div>
+    <section class="services">
+        <div class="container">
+            <h2 class="services-title title">Наши услуги</h2>
+            <div class="services-items">
+                <div class="services-item">
+                    <h4 class="services-item__title">Защита по уголовным делам</h4>
+                    <p class="services-item__text">
+                        Профессиональная защита по уголовным делам на всех стадиях процесса: дознание, следствие, суд. Защита прав и интересов обвиняемого, подозреваемого, потерпевшего, свидетеля. Обжалование незаконных действий и решений правоохранительных органов.
+                    </p>
+                </div>
+                <div class="services-item">
+                    <h4 class="services-item__title">Семейные споры</h4>
+                    <p class="services-item__text">
+                        Расторжение брака, раздел имущества, взыскание алиментов, определение места жительства ребенка, лишение родительских прав.
+                    </p>
+                </div>
+                <div class="services-item">
+                    <h4 class="services-item__title">Жилищные споры</h4>
+                    <p class="services-item__text">
+                        Вселение, выселение, признание права собственности, определение порядка пользования жилым помещением, залив квартиры.
+                    </p>
+                </div>
+                <div class="services-item">
+                    <h4 class="services-item__title">Наследственные споры</h4>
+                    <p class="services-item__text">
+                        Признание права собственности в порядке наследования, оспаривание завещания, раздел наследственного имущества, установление факта принятия наследства.
+                    </p>
+                </div>
+                <div class="services-item">
+                    <h4 class="services-item__title">Защита прав потребителей</h4>
+                    <p class="services-item__text">
+                        Возврат товара, взыскание неустойки, компенсация морального вреда.
+                    </p>
+                </div>
+                <div class="services-item">
+                    <h4 class="services-item__title">Сопровождение сделок</h4>
+                    <p class="services-item__text">
+                        Юридическое сопровождение сделок с недвижимостью, купля-продажа, дарение, мена, аренда.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Раздел имущества</h5>
-            <p class="card-text"><strong>Проблема:</strong> Сложный бракоразводный процесс с разделом бизнеса и активов.<br><strong>Результат:</strong> Заключено мировое соглашение, полностью защитившее имущественные интересы клиента.</p>
-          </div>
+    </section>
+
+    <section class="price">
+        <div class="container">
+            <h2 class="price-title title">Цены</h2>
+            <div class="price-items">
+                <div class="price-item">
+                    <h4 class="price-item__title">Устная консультация</h4>
+                    <p class="price-item__sum">1000 ₽</p>
+                </div>
+                <div class="price-item">
+                    <h4 class="price-item__title">Составление иска</h4>
+                    <p class="price-item__sum">3000 ₽</p>
+                </div>
+                <div class="price-item">
+                    <h4 class="price-item__title">Представительство в суде</h4>
+                    <p class="price-item__sum">5000 ₽</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Признание права собственности</h5>
-            <p class="card-text"><strong>Проблема:</strong> Отказ в регистрации права собственности на дом.<br><strong>Результат:</strong> Суд подтвердил право клиента, регистрация проведена в кратчайшие сроки.</p>
-          </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="contact-title title">Запишитесь на бесплатную консультацию</h2>
+            <form class="form">
+                <input class="form-input" type="text" placeholder="Ваше имя">
+                <input class="form-input" type="tel" placeholder="Ваш телефон">
+                <button class="form-btn btn" type="submit">Записаться</button>
+            </form>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contact" class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Контакты</h2>
-      <p class="lead text-muted">Свяжитесь со мной для консультации или записи на прием.</p>
-    </div>
-    <form id="contact-form" class="mx-auto" style="max-width: 480px;">
-      <div class="mb-3">
-        <label for="name" class="form-label">Ваше имя</label>
-        <input type="text" class="form-control" id="name" name="Имя" placeholder="Иван Иванов" required>
-      </div>
-      <div class="mb-3">
-        <label for="phone" class="form-label">Телефон</label>
-        <input type="tel" class="form-control" id="phone" name="Телефон" placeholder="+7 (___) ___-__-__" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Сообщение</label>
-        <textarea class="form-control" id="message" name="Сообщение" rows="4" placeholder="Опишите ваш вопрос"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary w-100 btn-submit-custom">Отправить</button>
-    </form>
-  </div>
-</section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <a class="logo" href="index.html">
+                    <img class="logo-img" src="img/logo.png" alt="">
+                </a>
+                <div class="footer-copy">
+                    <p class="footer-copy__text">© 2022 Все права защищены</p>
+                    <a class="footer-copy__link" href="#">Политика конфиденциальности</a>
+                </div>
+                <a class="phone" href="tel:380961111111">+38 (096) 111 11 11</a>
+            </div>
+        </div>
+    </footer>
 
-<div class="floating-contact" tabindex="0">
-  <button class="floating-btn" aria-label="Контакты">
-    <i class="bi bi-telephone-fill"></i>
-  </button>
-  <div class="contact-list">
-    <a href="tel:+79131234567" class="contact-item">
-      <i class="bi bi-telephone"></i> +7 (913) 123-45-67
-    </a>
-    <a href="https://vk.com/id710531662" target="_blank" class="contact-item">
-      <i class="bi bi-chat-square-dots-fill"></i> Написать в VK
-    </a>
-    <a href="mailto:kolotygin@example.com" class="contact-item">
-      <i class="bi bi-envelope-fill"></i> kolotygin@example.com
-    </a>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
