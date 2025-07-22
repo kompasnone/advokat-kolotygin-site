@@ -10,9 +10,9 @@ exports.handler = async function (event, context) {
   }
 
   // Получаем секреты из переменных окружения
-  const { 8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q, 1129860825 } = process.env;
+  const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
-  if (!8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q || !1129860825) {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     return {
       statusCode: 500,
       body: 'Server configuration error: missing Telegram credentials.',
@@ -33,7 +33,7 @@ exports.handler = async function (event, context) {
     text += `<b>Сообщение:</b>\n${message}`;
 
     // URL для запроса к Telegram API
-    const url = `https://api.telegram.org/bot${8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q}/sendMessage`;
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
     // Отправляем сообщение
     const response = await fetch(url, {
@@ -42,7 +42,7 @@ exports.handler = async function (event, context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: 1129860825,
+        chat_id: TELEGRAM_CHAT_ID,
         text: text,
         parse_mode: 'HTML', // Позволяет использовать HTML-теги для форматирования
       }),
