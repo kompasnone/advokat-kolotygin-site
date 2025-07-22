@@ -12,11 +12,6 @@ exports.handler = async function (event, context) {
   // Получаем секреты из переменных окружения Netlify
   const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
-  // --- НАЧАЛО ВРЕМЕННОГО КОДА ДЛЯ ОТЛАДКИ ---
-  console.log('DEBUG: TELEGRAM_BOT_TOKEN received (first 5 chars):', TELEGRAM_BOT_TOKEN ? TELEGRAM_BOT_TOKEN.substring(0, 5) + '...' : 'Not set');
-  console.log('DEBUG: TELEGRAM_CHAT_ID received:', TELEGRAM_CHAT_ID || 'Not set');
-  // --- КОНЕЦ ВРЕМЕННОГО КОДА ДЛЯ ОТЛАДКИ ---
-
   // Проверяем наличие токена и Chat ID. Это критично для работы.
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     console.error('Ошибка конфигурации сервера: Отсутствуют переменные окружения TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID.');
@@ -43,10 +38,6 @@ exports.handler = async function (event, context) {
     // URL для запроса к Telegram Bot API
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     
-    // --- НАЧАЛО ВРЕМЕННОГО КОДА ДЛЯ ОТЛАДКИ ---
-    console.log('DEBUG: Constructed Telegram API URL (partial token):', url.replace(TELEGRAM_BOT_TOKEN, TELEGRAM_BOT_TOKEN.substring(0, 5) + '...'));
-    // --- КОНЕЦ ВРЕМЕННОГО КОДА ДЛЯ ОТЛАДКИ ---
-
     // Отправляем сообщение
     const response = await fetch(url, {
       method: 'POST',
