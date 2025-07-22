@@ -10,9 +10,9 @@ exports.handler = async function (event, context) {
   }
 
   // Получаем секреты из переменных окружения
-  const { 8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q, TELEGRAM_CHAT_ID } = process.env;
+  const { 8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q, 1129860825 } = process.env;
 
-  if (!8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q || !TELEGRAM_CHAT_ID) {
+  if (!8047639451:AAFAq8Wgm_HF0y1q_HUDQ_u5lrU2W1ZHn7Q || !1129860825) {
     return {
       statusCode: 500,
       body: 'Server configuration error: missing Telegram credentials.',
@@ -42,7 +42,7 @@ exports.handler = async function (event, context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
+        chat_id: 1129860825,
         text: text,
         parse_mode: 'HTML', // Позволяет использовать HTML-теги для форматирования
       }),
