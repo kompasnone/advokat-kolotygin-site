@@ -1,0 +1,447 @@
+/* Общие стили и шрифты */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Стили для Navbar */
+.navbar-brand {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 0rem;
+    font-size: 1.25rem; /* Размер шрифта для названия */
+    text-decoration: none; /* Убрать подчеркивание */
+    white-space: nowrap; /* Предотвратить перенос текста */
+    color: #333; /* Цвет текста логотипа */
+    display: flex; /* Делаем элемент flex-контейнером, чтобы его дочерние элементы выравнивались */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    flex-grow: 1; /* Позволяем элементу растягиваться и занимать все доступное пространство */
+    max-width: calc(100% - 70px); /* Устанавливаем максимальную ширину, чтобы оставить место для кнопки-бургера */
+}
+
+.navbar-brand img {
+    vertical-align: middle;
+}
+
+.navbar-toggler {
+    margin-left: auto; /* Автоматический левый отступ смещает элемент вправо */
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #dc3545; /* Цвет при наведении */
+}
+
+.btn-consult {
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    background-color: #0c4481; /* Изменено на #0c4481 */
+    border-color: #0c4481; /* Изменено на #0c4481 */
+}
+
+.btn-consult:hover {
+    background-color: #0a3768; /* Темнее для эффекта наведения */
+    border-color: #0a3768; /* Темнее для эффекта наведения */
+}
+
+/* Секция Hero */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-image: url('images/66720.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 56px; /* Высота навбара */
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Позволяет hero-content занимать все доступное вертикальное пространство */
+    width: 100%;
+}
+
+/* Изменено: Выравнивание содержимого колонки с текстом к верху */
+.hero-section .hero-content .col-md-7 {
+    justify-content: flex-start !important; /* Выравнивание к верху */
+    flex-grow: 1; /* Убедимся, что колонка занимает всю доступную высоту */
+}
+
+.hero-section .hero-title {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .hero-section .hero-title {
+        margin-bottom: 5rem;
+    }
+}
+
+/* Новые стили для уменьшенного и поднятого текста */
+.hero-section .hero-content .hero-description-text {
+    font-size: 1.2rem; /* Уменьшенный размер для общего текста */
+    max-width: 600px; /* Сохраняем ограничение ширины для параграфа */
+}
+
+.hero-section .hero-content .hero-description-text li {
+    font-size: 1.4rem; /* Чуть больший размер для элементов списка */
+}
+
+
+/* Новые стили для абсолютно позиционированной фотографии */
+.hero-photo-absolute {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+}
+
+/* Стили для квадратного фото в секции Hero */
+.hero-photo-absolute .circular-wrapper {
+    border-radius: 0;
+    max-width: 650px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.hero-photo-absolute .circular-wrapper .photo-placeholder-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стили для кнопки "Получить консультацию" в Hero Section */
+.hero-section .btn {
+    padding: 1.2rem 2rem; /* Сделана шире */
+    font-size: 1.25rem;
+    
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 2rem; /* Поднята выше */
+    left: 0.5rem; /* Перемещена левее, вровень с текстом */
+    
+    z-index: 2; /* Убедимся, что кнопка находится поверх оверлея */
+    background-color: #fff;
+    color: #0c4582;
+    border: 2px solid #0c4582;
+    border-radius: 0.375rem;
+    font-weight: bold; /* Шрифт жирный */
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Эффект при наведении на кнопку Hero */
+.hero-section .btn:hover {
+    transform: translateY(-2px);
+    background-color: #0c4582; /* Фон при наведении */
+    color: #fff; /* Текст при наведении */
+    border-color: #0c4582; /* Рамка при наведении */
+}
+
+/* Удаляем стили для анимации */
+.hero-section .btn::before,
+.hero-section .btn::after {
+    display: none;
+}
+
+
+/* Секция "Услуги" */
+.icon-blue {
+    color: #0c4582;
+}
+
+#services h2 {
+    color: #0c4481; /* Изменено на #0c4481 */
+}
+
+/* Новые стили для карточек в секции "Услуги" */
+#services .card {
+    background-color: #0c4582;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    transition: background-color 0.3s ease, color 0.3s ease, 
+                transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+#services .card i {
+    color: white;
+}
+
+#services .card:hover {
+    background-color: #0A3768;
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(12, 69, 130, 0.6);
+}
+
+/* Секция "Обо мне" */
+#about .circular-wrapper {
+    margin: 0 auto 20px auto;
+    max-width: 400px; /* Увеличенный размер */
+    border-radius: 50%; /* Делаем круглым */
+    overflow: hidden; /* Обрезаем контент по кругу */
+    aspect-ratio: 1 / 1; /* Сохраняем соотношение сторон 1:1 для идеального круга */
+}
+
+#about .circular-wrapper .photo-placeholder-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение будет покрывать всю область, обрезая лишнее, сохраняя пропорции */
+}
+
+#about .about-heading-color {
+    color: #0c4481; /* Изменено на #0c4481 */
+}
+
+@media (min-width: 768px) {
+    #about .circular-wrapper {
+        margin: 0 auto;
+    }
+}
+
+/* Секция "Примеры из практики" - Карточки кейсов */
+#cases h2 {
+    color: #0c4481; /* Изменено на #0c4481 */
+}
+
+#cases .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cases .card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Свечение для "Прекращение уголовного дела" (первая карточка) */
+#cases .row .col-lg-4:nth-child(1) .card:hover {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), /* Синее свечение */
+                0 4px 8px rgba(0, 0, 0, 0.2); /* Сохраняем обычную тень */
+}
+
+/* Свечение для "Раздел имущества" (вторая карточка) */
+#cases .row .col-lg-4:nth-child(2) .card:hover {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), /* Синее свечение (цвет Bootstrap Primary) */
+                0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Свечение для "Признание права собственности" (третья карточка) */
+#cases .row .col-lg-4:nth-child(3) .card:hover {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), /* Синее свечение */
+                0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Секция "Контакты" (форма) */
+#contact h2 {
+    color: #0c4481; /* Изменено на #0c4481 */
+}
+
+#consult-form .form-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.btn-submit-custom {
+    background-color: #0c4481; /* Изменено на #0c4481 */
+    border-color: #0c4481; /* Изменено на #0c4481 */
+}
+
+.btn-submit-custom:hover {
+    background-color: #0a3768; /* Темнее для эффекта наведения */
+    border-color: #0a3768; /* Темнее для эффекта наведения */
+}
+
+/* Плавающая кнопка с контактами */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.floating-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    font-size: 1.5rem;
+}
+
+.floating-btn:hover {
+    transform: scale(1.05);
+}
+
+.contact-list {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+    min-width: 220px;
+    padding: 10px 0;
+}
+
+/* При наведении или фокусе на родительском элементе */
+.floating-contact:hover .contact-list,
+.floating-contact:focus-within .contact-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.contact-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Переопределяем цвет иконок в списке контактов */
+.contact-list .contact-item .bi-telephone {
+    color: black;
+}
+
+.contact-list .contact-item .bi-chat-square-dots-fill {
+    color: #0c4582;
+}
+
+.contact-list .contact-item .bi-envelope-fill {
+    color: #dc3545;
+}
+
+/* Общее правило для иконок внутри контакт-листа, если нужно */
+.contact-list .contact-item i {
+    margin-right: 10px;
+}
+
+/* ====== Адаптивные стили ====== */
+
+/* Планшеты и меньше (до 991.98px) */
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-item .btn-consult {
+        margin-top: 1rem; /* Добавляем отступ для кнопки в мобильном меню */
+        margin-left: 0; /* Убираем боковой отступ в мобильном меню */
+    }
+}
+
+/* Мобильные устройства (до 767.98px) */
+@media (max-width: 767.98px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Секция Hero */
+    .hero-section {
+        min-height: auto;
+        padding: 80px 0 4rem 0;
+        background-attachment: scroll;
+    }
+
+    .hero-section .hero-content {
+        padding-top: 0;
+        align-items: center;
+    }
+
+    .hero-section .hero-title,
+    .hero-section .hero-description-text {
+        text-align: center;
+    }
+    
+    .hero-section .hero-content .row,
+    .hero-section .hero-content .col-md-7 {
+        justify-content: center !important;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-section .hero-title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-section .hero-content .hero-description-text {
+        font-size: 1.1rem;
+    }
+
+    .hero-section .hero-content .hero-description-text li {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-section .btn {
+        position: static; /* Статическое позиционирование */
+        margin-top: 2rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        transform: none;
+        left: auto;
+        bottom: auto;
+    }
+
+    .hero-section .btn:hover {
+        transform: none;
+        background-color: #0c4582;
+        color: #fff;
+    }
+
+    /* Секция "Обо мне" */
+    #about .col-md-7 {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    #about .circular-wrapper {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+}

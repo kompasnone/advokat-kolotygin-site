@@ -1,0 +1,7 @@
+# netlify.toml
+[build]
+  command = "echo 'No build command required'"
+  publish = "." # Публикуем корневую директорию
+
+[functions]
+  directory = "netlify/functions" # Указываем, где лежат наши функции
