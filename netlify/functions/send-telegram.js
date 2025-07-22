@@ -5,69 +5,73 @@ exports.handler = async function (event, context) {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      body: 'Method Not Allowed',
+      body: JSON.stringify({ message: 'Method Not Allowed' }),
     };
   }
 
-  // Получаем секреты из переменных окружения
+  // Получаем секреты из переменных окружения Netlify
   const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
+  // Проверяем наличие токена и Chat ID. Это критично для работы.
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+    console.error('Ошибка конфигурации сервера: Отсутствуют переменные окружения TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID.');
     return {
       statusCode: 500,
-      body: 'Server configuration error: missing Telegram credentials.',
+      body: JSON.stringify({ message: 'Server configuration error: missing Telegram credentials.' }),
     };
   }
 
   try {
-    // Парсим данные, пришедшие с формы
+    // Парсим данные, пришедшие с формы, используя URLSearchParams, так как Content-Type: application/x-www-form-urlencoded
     const data = new URLSearchParams(event.body);
-    const name = data.get('Имя') || 'Не указано';
+    // Получаем значения полей по их атрибутам 'name' из HTML
+    const name = data.get('Имя') || 'Не указано'; 
     const phone = data.get('Телефон') || 'Не указан';
     const message = data.get('Сообщение') || 'Нет сообщения';
 
-    // Формируем красивое сообщение для Telegram
+    // Формируем красивое сообщение для Telegram с использованием HTML-форматирования
     let text = `<b>Новая заявка с сайта!</b>\n\n`;
     text += `<b>Имя:</b> ${name}\n`;
     text += `<b>Телефон:</b> ${phone}\n`;
     text += `<b>Сообщение:</b>\n${message}`;
-
-    // URL для запроса к Telegram API
+    
+    // URL для запроса к Telegram Bot API
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-    // Отправляем сообщение
+    
+    // Отправляем сообщение в Telegram
     const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', // Для Telegram API нужно отправлять JSON
       },
       body: JSON.stringify({
         chat_id: TELEGRAM_CHAT_ID,
         text: text,
-        parse_mode: 'HTML', // Позволяет использовать HTML-теги для форматирования
+        parse_mode: 'HTML', // Указываем, что текст содержит HTML-теги
       }),
     });
 
     if (!response.ok) {
-      // Если Telegram вернул ошибку, логируем ее
+      // Если Telegram API вернул ошибку, логируем её и возвращаем пользователю
       const errorData = await response.json();
-      console.error('Telegram API error:', errorData);
+      console.error('Ошибка от Telegram API:', errorData);
       return {
         statusCode: 500,
-        body: 'Failed to send message.',
+        body: JSON.stringify({ message: `Не удалось отправить сообщение: ${errorData.description || response.statusText}` }),
       };
     }
 
-    // Возвращаем успешный ответ
+    // Возвращаем успешный ответ, если всё прошло хорошо
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Message sent successfully!' }),
+      body: JSON.stringify({ message: 'Сообщение успешно отправлено!' }),
     };
   } catch (error) {
-    console.error('Function error:', error);
+    // Ловим любые другие ошибки, которые могли произойти в процессе выполнения функции
+    console.error('Ошибка выполнения функции:', error);
     return {
       statusCode: 500,
-      body: `Error: ${error.message}`,
+      body: JSON.stringify({ message: `Произошла внутренняя ошибка сервера: ${error.message}` }),
     };
   }
 };
